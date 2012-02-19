@@ -19,18 +19,15 @@ def get(request):
 
 
 '''
-Takes in a post request from the extension that has 
+Takes in a get request from the extension that has 
 url parameters url,shared,and scrolled. This should only
 be called by the extension
 '''
 @csrf_exempt
 def extension_create(request):
-    if not request.method=="POST":
-        raise Http404
-
-    url = request.POST.get("url")
-    shared = request.POST.get("shared")
-    scrolled = request.POST.get("scrolled")        
+    url = request.GET.get("url")
+    shared = request.GET.get("shared")
+    scrolled = request.GET.get("scrolled")        
     
     url = URL(url=url,shared=shared,scrolled=scrolled)
     url.save()
