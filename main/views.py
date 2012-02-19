@@ -3,6 +3,7 @@ import hashlib
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, Http404, HttpResponseBadRequest
 from django.template import RequestContext
+from django.views.decorators.csrf import csrf_exempt
 
 from django.conf import settings
 
@@ -22,6 +23,7 @@ Takes in a post request from the extension that has
 url parameters url,shared,and scrolled. This should only
 be called by the extension
 '''
+@csrf_exempt
 def extension_create(request):
     if not request.method=="POST":
         raise Http404
@@ -34,7 +36,7 @@ def extension_create(request):
     url.save()
     url.shared_url = "%s/?id=%s" % (settings.DOMAIN,url.id)
     url.save()
-    return HttpResponse(json.dumps({'url':url.shared_url},mimetype="application/json"))
+    return HttpResponse(json.dumps({'url':url.shared_url}),content_type="application/json")
 
 
 '''
@@ -47,13 +49,12 @@ def extension_get(request):
     try:
         url = URL.objects.get(id=id)
         context = {'id':id,
-                   'shared_domain':url.shared_domain,
-                   'shared_url':url.shared_domain,
+                   'url':url.url,
                    'shared':url.shared,
                    'scrolled':url.scrolled,
                    }
-        return HttpResponse(json.dumps(context),mimetype="application/json")
+        return HttpResponse(json.dumps(context),content_type="application/json")
     except URL.DoesNotExist:
-        return HttpResponseBadRequest(json.dumps({'error':'not found'}),mimetype="application/json")
+        return HttpResponseBadRequest(json.dumps({'error':'not found'}),content_type="application/json")
         
 
