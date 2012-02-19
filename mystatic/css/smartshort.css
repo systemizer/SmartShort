@@ -1,11 +1,21 @@
+body {color:#333;}
+
 .header {
 		margin:20px;
 		padding:20px; 
-		background-color:#EEE;
-		-webkit-border-radius: 6px;
-		-moz-border-radius: 6px;
-		border-radius: 6px;
 		height:200px;
 }
+
+.container {border-right: solid thin #333; border-left: solid thin #333;}
+
+.explanation {margin-top:40px;}
+.explanation p {font-size:20px;line-height:30px;margin-bottom:30px;}
 .header h1 {font-size:100px; letter-spacing:2px;line-height:100px;}
 .header p {position:relative;font-size:40px;top:30px;} 
+
+.download-container {text-align:center;}
+#download-btn {padding:10px;margin:10px;}
+
+footer {margin-top:20px;background-color:#333;padding:10px;}
+footer p {color:#DDD;padding:0;margin:0}
+footer a {color:#77F;}
