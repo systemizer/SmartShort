@@ -1,0 +1,11 @@
+.header {
+		margin:20px;
+		padding:20px; 
+		background-color:#EEE;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		height:200px;
+}
+.header h1 {font-size:100px; letter-spacing:2px;line-height:100px;}
+.header p {position:relative;font-size:40px;top:30px;} 
