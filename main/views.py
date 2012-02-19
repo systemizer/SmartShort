@@ -6,7 +6,7 @@ from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 
 from django.conf import settings
-
+from smartshort.main.decorators import AllowJSONPCallback
 from smartshort.main.models import URL
 
 '''
@@ -24,6 +24,7 @@ url parameters url,shared,and scrolled. This should only
 be called by the extension
 '''
 @csrf_exempt
+@AllowJSONPCallback
 def extension_create(request):
     url = request.GET.get("url")
     shared = request.GET.get("shared")
@@ -39,6 +40,7 @@ def extension_create(request):
 '''
 If the user DOES have the extension, then we will give the extension some json
 '''
+@AllowJSONPCallback
 def extension_get(request):
     id = request.GET.get("id")
     if not id:
