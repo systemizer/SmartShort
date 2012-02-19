@@ -130,5 +130,3 @@ try:
     from local_settings import *
 except ImportError:
     pass
-
-DOMAIN = "http://semlinked.com:8989"
