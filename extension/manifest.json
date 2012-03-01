@@ -1,0 +1,29 @@
+{
+  "name": "LeapToIt",
+  "permissions": [
+    "tabs",
+    "http://semlinked.com/*"
+  ],
+  "background_page": "templates/background.html",
+  "content_scripts": [
+    {
+      "run_at" : "document_start",
+      "matches": ["http://semlinked.com/*"],
+      "css": [],
+      "js": ["static/js/siteScript.js"]
+    },
+    {
+      "run_at" : "document_idle",
+      "matches": ["<all_urls>"],
+      "css": [],
+      "js": ["static/js/externalScript.js"]
+    }
+  ],
+  "version": "1.0",
+  "description": "Leap to what you're really sharing.",
+  "browser_action": {
+    "default_icon": "static/images/icon.png",
+    "popup" : "templates/popup.html",
+    "default_title" : "LeapToIt"
+ }
+}

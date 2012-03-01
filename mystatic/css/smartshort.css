@@ -1,4 +1,16 @@
-body {color:#333;}
+body {color:#333;background-image: linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
+background-image: -o-linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
+background-image: -moz-linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
+background-image: -webkit-linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
+background-image: -ms-linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
+
+background-image: -webkit-gradient(
+				  linear,
+				  left bottom,
+				  left top,
+				  color-stop(0.28, rgb(47,18,140)),
+				  color-stop(0.64, rgb(95,114,207))
+);}
 
 .header {
 		margin:20px;
@@ -6,8 +18,8 @@ body {color:#333;}
 		height:200px;
 }
 
-.container {border-right: solid thin #333; border-left: solid thin #333;}
-
+.container {border-right: solid thick #333; border-left: solid thick #333;background-color:#FFF;}
+hr {border: solid thin #CCC;}
 .explanation {margin-top:40px;}
 .explanation p {font-size:20px;line-height:30px;margin-bottom:30px;}
 .header h1 {font-size:100px; letter-spacing:2px;line-height:100px;}
@@ -20,5 +32,4 @@ footer {margin-top:20px;background-color:#333;padding:10px;}
 footer p {color:#DDD;padding:0;margin:0}
 footer a {color:#77F;}
 
-.social-media {position:fixed;top:10%;left:10px;margin:5px;padding:5px;}
 .social-media ul {list-style:none;}

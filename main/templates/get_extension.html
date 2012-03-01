@@ -10,71 +10,31 @@
   <div class="content">
 	<div class="span10 offset1 explanation">
 	  <p>Today, short urls are dumb :(</p>
-	  <p>When you want to share content on a webpage, you create a short url. This url brings you to the current page... not the content you were originally trying to share</p>
-	  <p>We found a solution. Download our chrome extension, and we will bring you to the content you were actually trying to share</p>
+	  <p>When you want to share content on a webpage, you create a short url. This url brings you to the current page... not the content you were originally trying to share.</p>
+	  <p>We found a solution. Download our chrome extension, and we will bring you to the content you were actually trying to share in the first place.</p>
 	</div>
 	<div class="download-container">
 	  <a href="{{MEDIA_URL}}versions/latest.tar.gz"><button id="download-btn" class="btn btn-large btn-primary">Download now</button></a>
 	</div>
   </div>
   <p style="clear:both"></p>
+  <div class="social-media well row span7 offset2">
+	<h3 class="span5">Don't forget to share this with your friends</h3>
+	<ul class="span1">
+	  <li>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="systemizer">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  </li>
+	  <li>
+		<a name="fb_share"></a> 
+		<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript">
+		</script>
+	  </li>
+	</ul>
+  </div>
+  <p style="clear:both"></p>
   <footer>
 	<p>Arash (<a href="http://twitter.com/arashdeli">@arashdeli</a>) and Rob (<a href="http://twitter.com/systemizer">@systemizer</a>)</p>
   </footer>
-</div>
-
-
-<div class="social-media span3">
-  <h2>Share about smart share?</h2>
-  <hr />
-  <ul>
-	<li>
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-via="systemizer">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	</li>
-	<li>
-	  <a name="fb_share"></a> 
-	  <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" 
-			  type="text/javascript">
-	  </script>
-	</li>
-  </ul>
-</div>
-<!--
-	<div class="row">
-	  <div class="span4">
-		<div class="well introbox">
-		  <div class="introbox-header">
-			<h2>Header</h2>
-		  </div>
-		  <div class="introbox-content">
-			<p>This is where the content will go</p>
-		  </div>
-		</div>
-	  </div>
-	  <div class="span4">
-		<div class="well introbox">
-		  <div class="introbox-header">
-			<h2>Header</h2>
-		  </div>
-		  <div class="introbox-content">
-			<p>This is where the content will go</p>
-		  </div>
-		</div>
-	  </div>
-	  <div class="span4">
-		<div class="well introbox">
-		  <div class="introbox-header">
-			<h2>Header</h2>
-		  </div>
-		  <div class="introbox-content">
-			<p>This is where the content will go</p>
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </div>
-
--->
 </div>
 {% endblock %}
