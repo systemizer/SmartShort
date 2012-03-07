@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+  <div class="header">
+	<h1>Leap To It</h1>
+	<p>Making short urls smart</p>
+  </div>
+  <hr />
+  <div class="content">
+    <table class="how-it-works span10 offset1">
+      <tr>
+	<td><img class="well" src="{{STATIC_URL}}/img/lti-1.png" /></td>
+	<td class="desc"><span class="num">1</span>Scour the web and find interesting content.</td>
+      </tr>
+      <tr>
+	<td><img class="well" src="{{STATIC_URL}}/img/lti-2.png" /></td>
+	<td class="desc"><span class="num">2</span>Find something? Go ahead and highlight the text that you would like to share with your friends.</td>
+      </tr>
+      <tr>
+	<td><img class="well" src="{{STATIC_URL}}/img/lti-3.png" /></td>
+	<td class="desc"><span class="num">3</span>Click the Leap.to.it button in your browser to create a new link.</td>
+      </tr>
+      <tr>
+	<td><img class="well" src="{{STATIC_URL}}/img/lti-4.png" /></td>
+	<td class="desc"><span class="num">4</span>Share the link and amaze your friends as the link redirects you exactly to the content you highlighted.</td>
+      </tr>
+    </table>
+    	<div class="download-container">
+	  <a target="_tab" href="https://chrome.google.com/webstore/detail/faidcaknppcifgmblnohgmhbjfolngmb?hl=en"><button id="download-btn" class="btn btn-large btn-primary">Get it now!</button></a>
+	  or 
+	  <a href="/"><button id="download-btn" class="btn btn-large btn-info">Go back home</button></a>
+
+	</div>
+  </div>
+  <p style="clear:both"></p>
+  <footer>
+	<p>Arash (<a href="http://twitter.com/arashdeli">@arashdeli</a>) and Rob (<a href="http://twitter.com/systemizer">@systemizer</a>)</p>
+  </footer>
+</div>
+{% endblock %}

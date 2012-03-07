@@ -1,19 +1,22 @@
-body {color:#333;background-image: linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
-background-image: -o-linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
-background-image: -moz-linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
-background-image: -webkit-linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
-background-image: -ms-linear-gradient(bottom, rgb(47,18,140) 28%, rgb(95,114,207) 64%);
+body {color:#333;background-image: linear-gradient(bottom, rgb(10,40,180) 28%, rgb(30,114,207) 64%);
+background-image: -o-linear-gradient(bottom, rgb(10,40,180) 28%, rgb(30,114,207) 64%);
+background-image: -moz-linear-gradient(bottom, rgb(10,40,180) 28%, rgb(30,114,207) 64%);
+background-image: -webkit-linear-gradient(bottom, rgb(10,40,180) 28%, rgb(30,114,207) 64%);
+background-image: -ms-linear-gradient(bottom, rgb(10,40,180) 28%, rgb(30,114,207) 64%);
 
 background-image: -webkit-gradient(
 				  linear,
 				  left bottom,
 				  left top,
-				  color-stop(0.28, rgb(47,18,140)),
-				  color-stop(0.64, rgb(95,114,207))
+				  color-stop(0.28, rgb(10,40,180)),
+				  color-stop(0.64, rgb(30,114,207))
 );}
 
 .header {
 		margin:20px;
+		background-image: url("/static/img/small_tile.png");
+		background-repeat:no-repeat;
+		background-position:right;
 		padding:20px; 
 		height:200px;
 }
@@ -33,3 +36,10 @@ footer p {color:#DDD;padding:0;margin:0}
 footer a {color:#77F;}
 
 .social-media ul {list-style:none;}
+
+table.how-it-works tr {margin-bottom:20px;}
+table.how-it-works td {padding:2.5%;width:45%;}
+table.how-it-works td .num {font-size:70px;}
+table.how-it-works td.desc {text-align:center;font-weight:700;font-size:22px}
+
+.note {font-size:30px;}

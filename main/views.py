@@ -15,7 +15,8 @@ will be called
 '''        
 def get(request):
     return render_to_response("get_extension.html",{},RequestContext(request))        
-
+def how_it_works(request):
+    return render_to_response("how-it-works.html",{},RequestContext(request))
 
 
 '''
