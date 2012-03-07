@@ -7,6 +7,7 @@
 	<p>Making short urls smart</p>
   </div>
   <hr />
+	{% if is_homepage %}
   <div class="content">
 	<div class="span10 offset1 explanation">
 	  <p>Today, short urls are dumb :(</p>
@@ -44,7 +45,23 @@
       </div>
     </div>
   </div>
-  <p style="clear:both"></p>
+  {% else %}
+  <div class="content">
+	<div class="span10 offset1 explanation">
+	  <p>Your friend shared a url using LeapTo.It. Our extension will take you directly to content that your friend is trying to share</p>
+	  <div class="download-container">
+		<a target="_tab" href="https://chrome.google.com/webstore/detail/faidcaknppcifgmblnohgmhbjfolngmb?hl=en"><button id="download-btn" class="btn btn-large btn-success">Use the extension</button></a>
+		or 
+		<a href='{{url.url}}'><button id="download-btn" class="btn btn-large btn-primary">Continue to the link</button></a>
+	  </div>
+	  <hr />
+	  <p>Curious?
+		<a href="/how-it-works/">See how LeapTo.It  works</a>
+	  </p>
+	</div>
+  </div>
+  {% endif %}
+  <p style="clear:both"></p>  
   <footer>
 	<p>Arash (<a href="http://twitter.com/arashdeli">@arashdeli</a>) and Rob (<a href="http://twitter.com/systemizer">@systemizer</a>)</p>
   </footer>

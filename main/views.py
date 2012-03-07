@@ -14,7 +14,17 @@ If the user doesnt have the extension, then this
 will be called
 '''        
 def get(request):
-    return render_to_response("get_extension.html",{},RequestContext(request))        
+    is_homepage = True
+    id = request.GET.get("id")
+    url = None
+    if id:
+        is_homepage=False
+        try:
+            url = URL.objects.get(id=id)            
+        except URL.DoesNotExist:
+            url = None
+    return render_to_response("get_extension.html",{'is_homepage':is_homepage,'url':url},RequestContext(request))        
+
 def how_it_works(request):
     return render_to_response("how-it-works.html",{},RequestContext(request))
 
