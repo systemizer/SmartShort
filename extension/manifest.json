@@ -1,26 +1,26 @@
 {
   "name": "LeapToIt",
   "permissions": [
-    "tabs",
-    "http://semlinked.com/*"
+    "tabs"
   ],
   "background_page": "templates/background.html",
   "content_scripts": [
     {
       "run_at" : "document_start",
-      "matches": ["http://semlinked.com/*"],
+      "matches": ["http://leapto.it/*"],
       "css": [],
       "js": ["static/js/siteScript.js"]
     },
     {
       "run_at" : "document_idle",
+      "exclude_matches" : ["*://leapto.it/*"],
       "matches": ["<all_urls>"],
-      "css": [],
-      "js": ["static/js/externalScript.js"]
+      "css": ["static/css/external.css"],
+      "js": ["static/js/jquery-1.7.1.min.js", "static/js/jquery.highlight-3.js", "static/js/externalScript.js"]
     }
   ],
-  "version": "1.0",
-  "description": "Leap to what you're really sharing.",
+  "version": "1.5",
+  "description": "Take others to what you're really sharing.",
   "browser_action": {
     "default_icon": "static/images/icon.png",
     "popup" : "templates/popup.html",

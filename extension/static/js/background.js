@@ -5,21 +5,23 @@ chrome.extension.onRequest.addListener(
   function(request, sender, sendResponse) {
     if(request.type == "ourSite"){
         //console.log(sender.tab.url);
-	//console.log("our site");
+	console.log("our site");
         id = sender.tab.url.split("=")[1];
         //console.log(id);
         var urlReceived;
         var textReceived;
         //console.log("bg asking server for new url");
-        $.ajax({'dataType':'jsonp','url':'http://semlinked.com:8989/extension/get/?callback=func&id=' + id, 'success':function(response){ 
+        $.ajax({'dataType':'jsonp','url':'http://leapto.it/extension/get/?callback=func&id=' + id, 'success':function(response){ 
             response= eval(response);
-            //console.log("respo: " + response);
+            console.log("server response: " + response);
             urlReceived = response.url;
             textReceived = response.shared;
             ourTabs[sender.tab.id] = {'tab': sender.tab, 'data' : {'url': urlReceived, 'shared' : textReceived, 'scrolled' : 0}};
             //console.log("url: " + urlReceived);
-            sendResponse({'message': 'added the tab!', 'url': urlReceived});
-        }});
+            sendResponse({'success': true, 'message': 'added the tab!', 'url': urlReceived});
+        }, 'error': function(a,b,c){
+	    sendResponse({});
+	}});
     }
     else{
         //console.log("our tab ids: ") 

@@ -1,10 +1,9 @@
-//console.log('running external script');
+console.log('running external script');
 
 
 var curelem = document.body;
 var result = [];
 var loaded = false;
-
 
 var search = function(cur,target)
 {
@@ -27,9 +26,14 @@ chrome.extension.sendRequest({'type' : 'externalSiteStart'}, function(response) 
 	//console.log(response); 
 	if(response.data !== undefined){
 	  	//console.log('searching for ' + response.data.shared);
+		console.log(response.data.shared);
   		search(document.body, response.data.shared);
-  		//console.log(result);
-		result[0].scrollIntoView();
+  		console.log(result);
+		if(result.length !== 0){
+			console.log('highlighting');
+			$(result[0]).highlight(response.data.shared);
+			result[0].scrollIntoView();
+		}	
 	}
 });
 

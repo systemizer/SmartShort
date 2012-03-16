@@ -10,7 +10,7 @@ $(document).ready(function(){
           shared = response.shared;
           if(shared === undefined) return;          
 	  //console.log('asking for url from server');
-          $.ajax({'dataType':'jsonp','url':'http://semlinked.com:8989/extension/create/?callback=func', 'data':{'url' : tab.url, 'shared' : shared, 'scrolled' : 0}, 'success':function(response){$("#result_container").html("Share This Link! " + response.url);
+          $.ajax({'dataType':'jsonp','url':'http://leapto.it/extension/create/?callback=func', 'data':{'url' : tab.url, 'shared' : shared, 'scrolled' : 0}, 'success':function(response){$("#result_container").html("Share This Link! " + response.url);
           }});
         });
     });
